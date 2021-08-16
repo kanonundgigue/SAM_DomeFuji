@@ -13088,7 +13088,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">expname</span><span class="o">=</span><span class="s2">&quot;jra25.gndg_fixsatuorg&quot;</span> <span class="p">;</span> <span class="n">intyr</span><span class="o">=</span><span class="mi">30</span>
@@ -13101,7 +13101,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
@@ -13123,7 +13123,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 描画設定</span>
@@ -13138,7 +13138,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Site</span><span class="p">:</span>
@@ -13156,7 +13156,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">Mon</span><span class="p">():</span>
@@ -13176,7 +13176,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_lon</span><span class="p">,</span><span class="n">df_lat</span><span class="p">,</span><span class="n">df_x</span><span class="p">,</span><span class="n">df_y</span> <span class="o">=</span> <span class="n">Site</span><span class="p">()</span><span class="o">.</span><span class="n">DomeF</span><span class="p">()</span>
@@ -13203,7 +13203,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">std</span><span class="p">(</span><span class="n">varin</span><span class="p">,</span> <span class="n">var</span><span class="p">):</span>
@@ -13228,10 +13228,10 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">loadfile</span> <span class="o">=</span> <span class="s2">&quot;cat/1dy/T2_anom.npz&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">loadfile</span> <span class="o">=</span> <span class="s2">&quot;T2_anom.npz&quot;</span>
 <span class="n">dataset</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">loadfile</span><span class="p">)</span>
 <span class="n">T2</span>       <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;T2&quot;</span><span class="p">]</span>
 <span class="n">lon2</span>     <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;lon2&quot;</span><span class="p">]</span>
@@ -13248,27 +13248,12 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">loadfile</span> <span class="o">=</span> <span class="s2">&quot;cat/1dy/prcp.npz&quot;</span>
-<span class="n">dataset</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">loadfile</span><span class="p">)</span>
-<span class="n">prcp</span>     <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;prcp&quot;</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">loadfile</span>  <span class="o">=</span> <span class="s2">&quot;cat/1dy/prcp_d18O_anom.npz&quot;</span>
-<span class="n">dataset</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">loadfile</span><span class="p">)</span>
-<span class="n">prcp_d18O</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;prcp_d18O&quot;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">loadfile</span> <span class="o">=</span> <span class="s2">&quot;prcp.npz&quot;</span>
+<span class="n">dataset</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">loadfile</span><span class="p">)</span>
+<span class="n">prcp</span>     <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;prcp&quot;</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -13281,7 +13266,22 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">loadfile</span> <span class="o">=</span> <span class="s2">&quot;z500day_eof/sam.npz&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">loadfile</span>  <span class="o">=</span> <span class="s2">&quot;prcp_d18O_anom.npz&quot;</span>
+<span class="n">dataset</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">loadfile</span><span class="p">)</span>
+<span class="n">prcp_d18O</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;prcp_d18O&quot;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">loadfile</span> <span class="o">=</span> <span class="s2">&quot;sam.npz&quot;</span>
 <span class="n">dataset</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">loadfile</span><span class="p">)</span>
 <span class="n">sam</span>      <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;sam&quot;</span><span class="p">][:]</span>
 </pre></div>
@@ -13293,7 +13293,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">temp_df</span> <span class="o">=</span> <span class="n">T2</span>  <span class="p">[</span><span class="n">df_x</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">df_y</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
@@ -14867,7 +14867,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">loadfile</span> <span class="o">=</span> <span class="s2">&quot;cat/1dy/T2.npz&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">loadfile</span> <span class="o">=</span> <span class="s2">&quot;T2.npz&quot;</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">loadfile</span><span class="p">)</span>
 <span class="n">T2_raw</span>        <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;T2&quot;</span><span class="p">]</span> 
 </pre></div>
@@ -14879,7 +14879,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">prcp_raw</span><span class="o">=</span><span class="n">prcp</span>
@@ -14892,10 +14892,10 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered celltag_remove-input">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">loadfile</span>        <span class="o">=</span> <span class="s2">&quot;cat/1dy/prcp_d18O.npz&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">loadfile</span>        <span class="o">=</span> <span class="s2">&quot;prcp_d18O.npz&quot;</span>
 <span class="n">dataset</span>       <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">loadfile</span><span class="p">)</span>
 <span class="n">prcp_d18O_raw</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;prcp_d18O&quot;</span><span class="p">]</span>
 </pre></div>
@@ -14907,7 +14907,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered celltag_remove-input">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">reg_t_d18O</span><span class="p">(</span><span class="n">df_in</span><span class="p">,</span> <span class="n">var1</span><span class="p">,</span> <span class="n">var2</span><span class="p">):</span>
@@ -14932,7 +14932,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered celltag_remove-input">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">({</span>
@@ -14959,7 +14959,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered celltag_remove-input">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[73]:</div>
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">mon_ave</span><span class="p">(</span><span class="n">df_raw</span><span class="p">,</span> <span class="s2">&quot;temp&quot;</span><span class="p">,</span><span class="s2">&quot;d18O&quot;</span><span class="p">,</span><span class="s2">&quot;prcp&quot;</span><span class="p">,</span><span class="n">intyr</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
@@ -14976,7 +14976,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[73]:</div>
+    <div class="prompt output_prompt">Out[45]:</div>
 
 
 
@@ -15102,7 +15102,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered celltag_remove-input">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[74]:</div>
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_mean</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">({</span>
@@ -15117,7 +15117,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered celltag_remove-input">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[75]:</div>
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_ann</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">({</span>
@@ -15134,7 +15134,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered celltag_remove-input">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[76]:</div>
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_mean</span><span class="o">=</span><span class="n">df_mean</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -15148,7 +15148,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered celltag_remove-input">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[77]:</div>
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_mean</span>
@@ -15164,7 +15164,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[77]:</div>
+    <div class="prompt output_prompt">Out[49]:</div>
 
 
 
@@ -15215,7 +15215,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered celltag_remove-input">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[78]:</div>
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span> 
@@ -15291,7 +15291,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[79]:</div>
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;α=</span><span class="si">{:4.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">alpha</span><span class="p">),</span><span class="s2">&quot;β=</span><span class="si">{:4.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">beta</span><span class="p">))</span>
