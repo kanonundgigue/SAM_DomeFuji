@@ -45,8 +45,9 @@ Data are available on https://doi.org/10.5281/zenodo.4733445
 - prcp_d18O_index.npz
 - sam_pattern.npz
 
-## Figure 5
+## Figure 5 and Figure S6
 - composite_moisture_JJA.png
+- clm_moisture.png
 
 ### Script
 - [composite_moisture_JJA.ipynb](composite_moisture_JJA.ipynb)
@@ -67,10 +68,9 @@ Data are available on https://doi.org/10.5281/zenodo.4733445
 - [Ant_DF1981-2010.html](Ant_DF1981-2010.html)
 
 ### Inputs
-- prcp.npz
-- prcp_d18O.npz
+- prcp_d18O_anom.npz
 - sammon.npz
-- sammon_jra25.npz
+- sam.npz
 
 ## Figure 7
 - composite_2DAnt_JJA.png
@@ -115,6 +115,36 @@ Data are available on https://doi.org/10.5281/zenodo.4733445
 - IceCores_6k_PI.csv
 - ERA40.1961.1990.t2m.stl1.stl4.timmean.nc
 
+## Figure S2, S3, and S4
+- Ant_proxy_DC2008.png
+- Ant_proxy_DC2009.png
+- Ant_proxy_DC2010.png
+
+### Script
+- [Ant_proxy_DC2008-2010.ipynb](Ant_proxy_DC2008-2010.ipynb)
+- [Ant_proxy_DC2008-2010.html](Ant_proxy_DC2008-2010.html)
+
+### Inputs
+- T2.npz
+- prcp.npz
+- prcp_d18O.npz
+
+### Additional Data
+- obs_DomeC.csv ([Stenni et al., 2016, Cry.](https://doi.org/10.5194/tc-10-2415-2016))
+
+## Figure S5
+- monthly_reconst.png
+
+### Script
+- [monthly_clm_DF.ipynb](monthly_clm_DF.ipynb)
+- [monthly_clm_DF.html](monthly_clm_DF.html)
+
+### Inputs
+- T2.npz
+- prcp_d18O.npz
+- prcp.npz
+
+###
 # References for Additional Data
 - Atsawawaranunt, Kamolphat, Harrison, Sandy and Comas-Bru, Laia (2019): SISAL (Speleothem Isotopes Synthesis and AnaLysis Working Group) database version 1b. University of Reading. Dataset. http://dx.doi.org/10.17864/1947.189
 - Cauquoin, A., Werner, M., & Lohmann, G. (2019). Water isotopes – climate relationships for the mid-Holocene and preindustrial period simulated with an isotope-enabled version of MPI-ESM. Climate of the Past, 15(6), 1913–1937. https://doi.org/10.5194/cp-15-1913-2019
@@ -122,5 +152,5 @@ Data are available on https://doi.org/10.5281/zenodo.4733445
 - IAEA/WMO. (2018). GNIP. Global Network for Isotopes in Precipitation [Data set]. IAEA: International Atomic Energy Agency/World Meteorological Organization. Retrieved from https://nucleus.iaea.org/wiser
 - Kållberg, P., Simmons, A., Uppala, S., & Fuentes, M. (2004). The ERA-40 archive.[Revised October 2007], Shinfield Park. Reading, (17). Retrieved from https://www.ecmwf.int/node/10595
 - Onogi, K., Tsutsui, J., Koide, H., Sakamoto, M., Kobayashi, S., Hatsushika, H., et al. (2007). The JRA-25 Reanalysis. Journal of the Meteorological Society of Japan. Ser. II, 85(3), 369–432. https://doi.org/10.2151/jmsj.85.369
-
+- Stenni, B., Scarchilli, C., Masson-Delmotte, V., Schlosser, E., Ciardini, V., Dreossi, G., et al. (2016). Three-year monitoring of stable isotopes of precipitation at Concordia Station, East Antarctica. The Cryosphere, 10(5), 2415–2428. https://doi.org/10.5194/tc-10-2415-2016
 Kanon Kino (kanon[at]aori.u-tokyo.ac.jp)
