@@ -20,7 +20,9 @@ Data (\*.npz and \*.nc) are available on https://doi.org/10.5281/zenodo.4733445
 ## Figures 2 and 3, and Tables S1, S2 and S3
 - [Figure 2](correlation_spearman.png)
 - [Figure 3](std.png)
-
+- [Table S1](correlation.html#Table-S1)
+- [Table S2](correlation.html#Table-S2)
+- [Table S3](correlation.html#Table-S3)
 
 ### Script
 - [correlation.ipynb](correlation.ipynb)
