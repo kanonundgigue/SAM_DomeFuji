@@ -1,6 +1,6 @@
 # Scripts and Data summary
 
-Data are available on https://doi.org/10.5281/zenodo.4733445
+Data (\*.npz and \*.nc) are available on https://doi.org/10.5281/zenodo.4733445
 
 ## Figure 1
 - [Figure 1](Ant_proxy_DF2003.png)
@@ -65,7 +65,7 @@ Data are available on https://doi.org/10.5281/zenodo.4733445
 - precw_d18O.npz
 
 ## Figure 6
-- Ant_DF1981-2010.png
+- [Figure 6](Ant_DF1981-2010.png)
 
 ### Script
 - [Ant_DF1981-2010.ipynb](Ant_DF1981-2010.ipynb)
@@ -77,7 +77,7 @@ Data are available on https://doi.org/10.5281/zenodo.4733445
 - sam.npz
 
 ## Figure 7
-- composite_2DAnt_JJA.png
+- [Figure 7](composite_2DAnt_JJA.png)
 
 ### Script
 - [composite_2DAnt_JJA.ipynb](composite_2DAnt_JJA.ipynb)
@@ -90,7 +90,7 @@ Data are available on https://doi.org/10.5281/zenodo.4733445
 - prcp.npz
 
 ## Figure 8
-- composite_DomeF_JJA.png
+- [Figure 8](composite_DomeF_JJA.png)
 
 ### Script
 - [composite_DomeF_JJA.ipynb](composite_DomeF_JJA.ipynb)
@@ -103,7 +103,7 @@ Data are available on https://doi.org/10.5281/zenodo.4733445
 - prcp.npz
 
 ## Figure S1
-- global_model-data_comparison.png
+- [Figure S1](global_model-data_comparison.png)
 
 ### Script
 - [global_model-data_comparison.ipynb](global_model-data_comparison.ipynb)
@@ -120,9 +120,9 @@ Data are available on https://doi.org/10.5281/zenodo.4733445
 - ERA40.1961.1990.t2m.stl1.stl4.timmean.nc
 
 ## Figure S2, S3, and S4
-- Ant_proxy_DC2008.png
-- Ant_proxy_DC2009.png
-- Ant_proxy_DC2010.png
+- [Figure S2](Ant_proxy_DC2008.png)
+- [Figure S3](Ant_proxy_DC2009.png)
+- [Figure S4](Ant_proxy_DC2010.png)
 
 ### Script
 - [Ant_proxy_DC2008-2010.ipynb](Ant_proxy_DC2008-2010.ipynb)
@@ -137,7 +137,7 @@ Data are available on https://doi.org/10.5281/zenodo.4733445
 - obs_DomeC.csv ([Stenni et al., 2016, Cry.](https://doi.org/10.5194/tc-10-2415-2016))
 
 ## Figure S5
-- monthly_reconst.png
+- [Figure S5](monthly_reconst.png)
 
 ### Script
 - [monthly_clm_DF.ipynb](monthly_clm_DF.ipynb)
@@ -157,4 +157,5 @@ Data are available on https://doi.org/10.5281/zenodo.4733445
 - Kållberg, P., Simmons, A., Uppala, S., & Fuentes, M. (2004). The ERA-40 archive.[Revised October 2007], Shinfield Park. Reading, (17). Retrieved from https://www.ecmwf.int/node/10595
 - Onogi, K., Tsutsui, J., Koide, H., Sakamoto, M., Kobayashi, S., Hatsushika, H., et al. (2007). The JRA-25 Reanalysis. Journal of the Meteorological Society of Japan. Ser. II, 85(3), 369–432. https://doi.org/10.2151/jmsj.85.369
 - Stenni, B., Scarchilli, C., Masson-Delmotte, V., Schlosser, E., Ciardini, V., Dreossi, G., et al. (2016). Three-year monitoring of stable isotopes of precipitation at Concordia Station, East Antarctica. The Cryosphere, 10(5), 2415–2428. https://doi.org/10.5194/tc-10-2415-2016
+
 Kanon Kino (kanon[at]aori.u-tokyo.ac.jp)
