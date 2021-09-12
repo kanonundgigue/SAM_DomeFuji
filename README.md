@@ -3,7 +3,7 @@
 Data are available on https://doi.org/10.5281/zenodo.4733445
 
 ## Figure 1
-- Ant_proxy_DF2003.png
+- [Figure 1](Ant_proxy_DF2003.png)
 
 ### Script
 - [Ant_proxy_DF2003.ipynb](Ant_proxy_DF2003.ipynb)
@@ -18,6 +18,9 @@ Data are available on https://doi.org/10.5281/zenodo.4733445
 - obs_DomeF.csv ([Fujita & Abe, 2006, GRL](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2006GL026936))
 
 ## Figures 2 and 3, and Tables S1, S2 and S3
+- [Figure 2](correlation_spearman.png)
+- [Figure 3](std.png)
+
 
 ### Script
 - [correlation.ipynb](correlation.ipynb)
@@ -33,8 +36,9 @@ Data are available on https://doi.org/10.5281/zenodo.4733445
 ### Additional Data
 - obs_DomeF.csv ([Fujita & Abe, 2006, GRL](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2006GL026936))
 
-## Figure 4
-- z500_patterns.png
+## Figures 4 and S7
+- [Figure 4](z500_patterns.png)
+- [Figure S7](z500_events.png)
 
 ### Script
 - [z500_patterns.ipynb](z500_patterns.ipynb)
@@ -46,8 +50,8 @@ Data are available on https://doi.org/10.5281/zenodo.4733445
 - sam_pattern.npz
 
 ## Figure 5 and Figure S6
-- composite_moisture_JJA.png
-- clm_moisture.png
+- [Figure 5](composite_moisture_JJA.png)
+- [Figure S6](clm_moisture.png)
 
 ### Script
 - [composite_moisture_JJA.ipynb](composite_moisture_JJA.ipynb)

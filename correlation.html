@@ -13233,7 +13233,7 @@ div#notebook {
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">loadfile</span> <span class="o">=</span> <span class="s2">&quot;T2_anom.npz&quot;</span>
 <span class="n">dataset</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">loadfile</span><span class="p">)</span>
-<span class="n">T2</span>       <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;T2&quot;</span><span class="p">]</span>
+<span class="n">temp_df</span><span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;T2&quot;</span><span class="p">][</span><span class="n">df_x</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">df_y</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
 <span class="n">lon2</span>     <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;lon2&quot;</span><span class="p">]</span>
 <span class="n">lat2</span>     <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;lat2&quot;</span><span class="p">]</span>
 <span class="n">y</span>        <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span>
@@ -13251,9 +13251,9 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">loadfile</span> <span class="o">=</span> <span class="s2">&quot;prcp.npz&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">loadfile</span> <span class="o">=</span> <span class="s2">&quot;T2.npz&quot;</span>
 <span class="n">dataset</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">loadfile</span><span class="p">)</span>
-<span class="n">prcp</span>     <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;prcp&quot;</span><span class="p">]</span>
+<span class="n">rawtemp_df</span>   <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;T2&quot;</span><span class="p">][</span><span class="n">df_x</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">df_y</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
 </pre></div>
 
     </div>
@@ -13266,9 +13266,9 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">loadfile</span>  <span class="o">=</span> <span class="s2">&quot;prcp_d18O_anom.npz&quot;</span>
-<span class="n">dataset</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">loadfile</span><span class="p">)</span>
-<span class="n">prcp_d18O</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;prcp_d18O&quot;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">loadfile</span> <span class="o">=</span> <span class="s2">&quot;prcp.npz&quot;</span>
+<span class="n">dataset</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">loadfile</span><span class="p">)</span>
+<span class="n">prcp_df</span>     <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;prcp&quot;</span><span class="p">][</span><span class="n">df_x</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">df_y</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
 </pre></div>
 
     </div>
@@ -13279,6 +13279,36 @@ div#notebook {
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">loadfile</span>  <span class="o">=</span> <span class="s2">&quot;prcp_d18O_anom.npz&quot;</span>
+<span class="n">dataset</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">loadfile</span><span class="p">)</span>
+<span class="n">prcp_d18O_df</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;prcp_d18O&quot;</span><span class="p">][</span><span class="n">df_x</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">df_y</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">loadfile</span>  <span class="o">=</span> <span class="s2">&quot;prcp_d18O.npz&quot;</span>
+<span class="n">dataset</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">loadfile</span><span class="p">)</span>
+<span class="n">rawprcp_d18O_df</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;prcp_d18O&quot;</span><span class="p">][</span><span class="n">df_x</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">df_y</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">loadfile</span> <span class="o">=</span> <span class="s2">&quot;sam.npz&quot;</span>
@@ -13293,22 +13323,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">temp_df</span> <span class="o">=</span> <span class="n">T2</span>  <span class="p">[</span><span class="n">df_x</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">df_y</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
-<span class="n">prcp_df</span> <span class="o">=</span> <span class="n">prcp</span><span class="p">[</span><span class="n">df_x</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">df_y</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
-<span class="n">prcp_d18O_df</span>   <span class="o">=</span> <span class="n">prcp_d18O</span><span class="p">[</span><span class="n">df_x</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">df_y</span><span class="o">-</span><span class="mi">1</span><span class="p">,:]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_all</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">({</span>
@@ -13330,7 +13345,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_all</span> <span class="o">=</span> <span class="n">df_all</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s2">&quot;any&quot;</span><span class="p">)</span>
@@ -13347,47 +13362,12 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">prcp_summer</span> <span class="o">=</span> <span class="n">df_all</span><span class="p">[(</span><span class="n">df_all</span><span class="p">[</span><span class="s2">&quot;Mon&quot;</span><span class="p">]</span><span class="o">&lt;=</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">df_all</span><span class="p">[</span><span class="s2">&quot;Mon&quot;</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">11</span><span class="p">)][</span><span class="s2">&quot;prcp&quot;</span><span class="p">]</span>
 <span class="n">prcp_winter</span> <span class="o">=</span> <span class="n">df_all</span><span class="p">[(</span><span class="n">df_all</span><span class="p">[</span><span class="s2">&quot;Mon&quot;</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">df_all</span><span class="p">[</span><span class="s2">&quot;Mon&quot;</span><span class="p">]</span><span class="o">&lt;=</span><span class="mi">10</span><span class="p">)][</span><span class="s2">&quot;prcp&quot;</span><span class="p">]</span>
 <span class="n">stats</span><span class="o">.</span><span class="n">mannwhitneyu</span><span class="p">(</span><span class="n">prcp_winter</span><span class="p">,</span> <span class="n">prcp_summer</span><span class="p">,</span> <span class="n">use_continuity</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[15]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>MannwhitneyuResult(statistic=18482064.0, pvalue=1.8452320494557212e-07)</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">temp_summer</span> <span class="o">=</span> <span class="n">df_all</span><span class="p">[(</span><span class="n">df_all</span><span class="p">[</span><span class="s2">&quot;Mon&quot;</span><span class="p">]</span><span class="o">&lt;=</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">df_all</span><span class="p">[</span><span class="s2">&quot;Mon&quot;</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">10</span><span class="p">)][</span><span class="s2">&quot;temp&quot;</span><span class="p">]</span>
-<span class="n">temp_winter</span> <span class="o">=</span> <span class="n">df_all</span><span class="p">[(</span><span class="n">df_all</span><span class="p">[</span><span class="s2">&quot;Mon&quot;</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">df_all</span><span class="p">[</span><span class="s2">&quot;Mon&quot;</span><span class="p">]</span><span class="o">&lt;=</span><span class="mi">9</span> <span class="p">)][</span><span class="s2">&quot;temp&quot;</span><span class="p">]</span>
-<span class="n">stats</span><span class="o">.</span><span class="n">bartlett</span><span class="p">(</span><span class="n">temp_winter</span><span class="p">,</span> <span class="n">temp_summer</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13406,7 +13386,7 @@ div#notebook {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>BartlettResult(statistic=873.6390032319258, pvalue=5.2781195084333786e-192)</pre>
+<pre>MannwhitneyuResult(statistic=18482064.0, pvalue=1.8452320494557212e-07)</pre>
 </div>
 
 </div>
@@ -13420,9 +13400,9 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">d18O_summer</span> <span class="o">=</span> <span class="n">df_all</span><span class="p">[(</span><span class="n">df_all</span><span class="p">[</span><span class="s2">&quot;Mon&quot;</span><span class="p">]</span><span class="o">&lt;=</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">df_all</span><span class="p">[</span><span class="s2">&quot;Mon&quot;</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">10</span><span class="p">)][</span><span class="s2">&quot;d18O&quot;</span><span class="p">]</span>
-<span class="n">d18O_winter</span> <span class="o">=</span> <span class="n">df_all</span><span class="p">[(</span><span class="n">df_all</span><span class="p">[</span><span class="s2">&quot;Mon&quot;</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">df_all</span><span class="p">[</span><span class="s2">&quot;Mon&quot;</span><span class="p">]</span><span class="o">&lt;=</span><span class="mi">9</span> <span class="p">)][</span><span class="s2">&quot;d18O&quot;</span><span class="p">]</span>
-<span class="n">stats</span><span class="o">.</span><span class="n">bartlett</span><span class="p">(</span><span class="n">d18O_winter</span><span class="p">,</span> <span class="n">d18O_summer</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">temp_summer</span> <span class="o">=</span> <span class="n">df_all</span><span class="p">[(</span><span class="n">df_all</span><span class="p">[</span><span class="s2">&quot;Mon&quot;</span><span class="p">]</span><span class="o">&lt;=</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">df_all</span><span class="p">[</span><span class="s2">&quot;Mon&quot;</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">10</span><span class="p">)][</span><span class="s2">&quot;temp&quot;</span><span class="p">]</span>
+<span class="n">temp_winter</span> <span class="o">=</span> <span class="n">df_all</span><span class="p">[(</span><span class="n">df_all</span><span class="p">[</span><span class="s2">&quot;Mon&quot;</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">df_all</span><span class="p">[</span><span class="s2">&quot;Mon&quot;</span><span class="p">]</span><span class="o">&lt;=</span><span class="mi">9</span> <span class="p">)][</span><span class="s2">&quot;temp&quot;</span><span class="p">]</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">bartlett</span><span class="p">(</span><span class="n">temp_winter</span><span class="p">,</span> <span class="n">temp_summer</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13441,7 +13421,7 @@ div#notebook {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>BartlettResult(statistic=149.16143017723277, pvalue=2.643957422602229e-34)</pre>
+<pre>BartlettResult(statistic=873.6390032319258, pvalue=5.2781195084333786e-192)</pre>
 </div>
 
 </div>
@@ -13453,6 +13433,41 @@ div#notebook {
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">d18O_summer</span> <span class="o">=</span> <span class="n">df_all</span><span class="p">[(</span><span class="n">df_all</span><span class="p">[</span><span class="s2">&quot;Mon&quot;</span><span class="p">]</span><span class="o">&lt;=</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">df_all</span><span class="p">[</span><span class="s2">&quot;Mon&quot;</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">10</span><span class="p">)][</span><span class="s2">&quot;d18O&quot;</span><span class="p">]</span>
+<span class="n">d18O_winter</span> <span class="o">=</span> <span class="n">df_all</span><span class="p">[(</span><span class="n">df_all</span><span class="p">[</span><span class="s2">&quot;Mon&quot;</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">df_all</span><span class="p">[</span><span class="s2">&quot;Mon&quot;</span><span class="p">]</span><span class="o">&lt;=</span><span class="mi">9</span> <span class="p">)][</span><span class="s2">&quot;d18O&quot;</span><span class="p">]</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">bartlett</span><span class="p">(</span><span class="n">d18O_winter</span><span class="p">,</span> <span class="n">d18O_summer</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[18]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>BartlettResult(statistic=149.16143017723277, pvalue=2.643957422602229e-34)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">indexlist</span> <span class="o">=</span> <span class="n">mons</span><span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">][:</span><span class="mi">12</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
@@ -13588,7 +13603,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">draw_std</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
@@ -13627,7 +13642,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span> 
@@ -13635,6 +13650,7 @@ div#notebook {
 <span class="c1">#plt.title(&quot;Standard deviation in each @Dome Fuji&quot;)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;std.png&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;pic/Figure3.jpg&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13666,7 +13682,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">indexlist</span> <span class="o">=</span> <span class="n">mons</span><span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">][:</span><span class="mi">12</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
@@ -13808,7 +13824,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">std_obs</span><span class="p">(</span><span class="n">varin</span><span class="p">,</span><span class="n">varmean</span><span class="p">,</span> <span class="n">var</span><span class="p">):</span>
@@ -13832,7 +13848,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">loadfile</span>  <span class="o">=</span> <span class="s2">&quot;sam_jra25.npz&quot;</span>
@@ -13847,7 +13863,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">obs_DomeF</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="s2">&quot;obs_DomeF.csv&quot;</span><span class="p">,</span>
@@ -13883,7 +13899,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_obs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">({</span>
@@ -13905,7 +13921,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_obs</span>  <span class="o">=</span> <span class="n">df_obs</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s2">&quot;any&quot;</span><span class="p">)</span>
@@ -13922,7 +13938,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_std_obs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="n">num_obs</span><span class="p">)),</span>
@@ -14056,7 +14072,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_std_obs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="n">num_obs</span><span class="p">)),</span>
@@ -14190,47 +14206,12 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">prcp_summer_obs</span> <span class="o">=</span> <span class="n">df_obs</span><span class="p">[(</span><span class="n">df_obs</span><span class="p">[</span><span class="s2">&quot;Mon&quot;</span><span class="p">]</span><span class="o">&lt;=</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">df_obs</span><span class="p">[</span><span class="s2">&quot;Mon&quot;</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">11</span><span class="p">)][</span><span class="s2">&quot;prcp&quot;</span><span class="p">]</span>
 <span class="n">prcp_winter_obs</span> <span class="o">=</span> <span class="n">df_obs</span><span class="p">[(</span><span class="n">df_obs</span><span class="p">[</span><span class="s2">&quot;Mon&quot;</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">df_obs</span><span class="p">[</span><span class="s2">&quot;Mon&quot;</span><span class="p">]</span><span class="o">&lt;=</span><span class="mi">10</span><span class="p">)][</span><span class="s2">&quot;prcp&quot;</span><span class="p">]</span>
 <span class="n">stats</span><span class="o">.</span><span class="n">mannwhitneyu</span><span class="p">(</span><span class="n">prcp_winter_obs</span><span class="p">,</span> <span class="n">prcp_summer_obs</span><span class="p">,</span> <span class="n">use_continuity</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[29]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>MannwhitneyuResult(statistic=13685.0, pvalue=0.04328494500402202)</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">temp_summer_obs</span> <span class="o">=</span> <span class="n">df_obs</span><span class="p">[(</span><span class="n">df_obs</span><span class="p">[</span><span class="s2">&quot;Mon&quot;</span><span class="p">]</span><span class="o">&lt;=</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">df_obs</span><span class="p">[</span><span class="s2">&quot;Mon&quot;</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">10</span><span class="p">)][</span><span class="s2">&quot;temp&quot;</span><span class="p">]</span>
-<span class="n">temp_winter_obs</span> <span class="o">=</span> <span class="n">df_obs</span><span class="p">[(</span><span class="n">df_obs</span><span class="p">[</span><span class="s2">&quot;Mon&quot;</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">df_obs</span><span class="p">[</span><span class="s2">&quot;Mon&quot;</span><span class="p">]</span><span class="o">&lt;=</span><span class="mi">9</span> <span class="p">)][</span><span class="s2">&quot;temp&quot;</span><span class="p">]</span>
-<span class="n">stats</span><span class="o">.</span><span class="n">bartlett</span><span class="p">(</span><span class="n">temp_winter_obs</span><span class="p">,</span> <span class="n">temp_summer_obs</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14249,7 +14230,7 @@ div#notebook {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>BartlettResult(statistic=3.505691910263579, pvalue=0.06115829403382094)</pre>
+<pre>MannwhitneyuResult(statistic=13685.0, pvalue=0.04328494500402202)</pre>
 </div>
 
 </div>
@@ -14261,6 +14242,41 @@ div#notebook {
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">temp_summer_obs</span> <span class="o">=</span> <span class="n">df_obs</span><span class="p">[(</span><span class="n">df_obs</span><span class="p">[</span><span class="s2">&quot;Mon&quot;</span><span class="p">]</span><span class="o">&lt;=</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">df_obs</span><span class="p">[</span><span class="s2">&quot;Mon&quot;</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">10</span><span class="p">)][</span><span class="s2">&quot;temp&quot;</span><span class="p">]</span>
+<span class="n">temp_winter_obs</span> <span class="o">=</span> <span class="n">df_obs</span><span class="p">[(</span><span class="n">df_obs</span><span class="p">[</span><span class="s2">&quot;Mon&quot;</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">df_obs</span><span class="p">[</span><span class="s2">&quot;Mon&quot;</span><span class="p">]</span><span class="o">&lt;=</span><span class="mi">9</span> <span class="p">)][</span><span class="s2">&quot;temp&quot;</span><span class="p">]</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">bartlett</span><span class="p">(</span><span class="n">temp_winter_obs</span><span class="p">,</span> <span class="n">temp_summer_obs</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[31]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>BartlettResult(statistic=3.505691910263579, pvalue=0.06115829403382094)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">d18O_summer_obs</span> <span class="o">=</span> <span class="n">df_obs</span><span class="p">[(</span><span class="n">df_obs</span><span class="p">[</span><span class="s2">&quot;Mon&quot;</span><span class="p">]</span><span class="o">&lt;=</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">df_obs</span><span class="p">[</span><span class="s2">&quot;Mon&quot;</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">10</span><span class="p">)][</span><span class="s2">&quot;d18O&quot;</span><span class="p">]</span>
@@ -14278,7 +14294,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[31]:</div>
+    <div class="prompt output_prompt">Out[32]:</div>
 
 
 
@@ -14302,7 +14318,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">p_value</span><span class="o">=</span><span class="mf">0.05</span>
@@ -14315,7 +14331,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">spearmanr</span><span class="p">(</span><span class="n">varin</span><span class="p">,</span> <span class="n">var1</span><span class="p">,</span><span class="n">var2</span><span class="p">,</span> <span class="n">p_value</span><span class="o">=</span><span class="mf">0.05</span><span class="p">):</span>
@@ -14346,7 +14362,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">draw_d18O</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
@@ -14390,7 +14406,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_spearmanr</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
@@ -14415,6 +14431,7 @@ div#notebook {
 <span class="c1">#plt.title(&quot;Spearman&#39;s correlation coefficient with $\mathsf{\delta^{18}O_p}$ in each month @Dome Fuji&quot;)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;correlation_spearman.png&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;pic/Figure2.jpg&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14446,7 +14463,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_spearmanr</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
@@ -14637,7 +14654,104 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">p_value</span><span class="o">=</span><span class="mf">0.1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Model-results-for-the-period-same-as-the-observation-(4-Feb.-2003---20-Jan.-2004)-w/o-removing-of-seasonality">Model results for the period same as the observation (4 Feb. 2003 - 20 Jan. 2004) w/o removing of seasonality<a class="anchor-link" href="#Model-results-for-the-period-same-as-the-observation-(4-Feb.-2003---20-Jan.-2004)-w/o-removing-of-seasonality">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_model_compobs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">({</span>
+    <span class="s2">&quot;Number&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">obs_prcp_d18O_df</span><span class="p">))),</span>
+    <span class="s2">&quot;Year&quot;</span><span class="p">:</span> <span class="n">obs_y_df</span><span class="p">,</span>
+    <span class="s2">&quot;Mon&quot;</span> <span class="p">:</span> <span class="n">obs_m_df</span><span class="p">,</span>
+    <span class="s2">&quot;Date&quot;</span><span class="p">:</span> <span class="n">obs_d_df</span><span class="p">,</span>
+    <span class="s2">&quot;d18O&quot;</span><span class="p">:</span> <span class="n">rawprcp_d18O_df</span><span class="p">[((</span><span class="n">y</span><span class="o">==</span><span class="mi">2003</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">m</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">))</span><span class="o">+</span><span class="p">((</span><span class="n">y</span><span class="o">==</span><span class="mi">2004</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">m</span><span class="o">==</span><span class="mi">1</span><span class="p">))]</span>      <span class="p">,</span>
+    <span class="s2">&quot;temp&quot;</span><span class="p">:</span> <span class="n">rawtemp_df</span><span class="p">[((</span><span class="n">y</span><span class="o">==</span><span class="mi">2003</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">m</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">))</span><span class="o">+</span><span class="p">((</span><span class="n">y</span><span class="o">==</span><span class="mi">2004</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">m</span><span class="o">==</span><span class="mi">1</span><span class="p">))]</span>      <span class="p">,</span>
+    <span class="s2">&quot;prcp&quot;</span><span class="p">:</span> <span class="n">prcp_df</span><span class="p">[((</span><span class="n">y</span><span class="o">==</span><span class="mi">2003</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">m</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">))</span><span class="o">+</span><span class="p">((</span><span class="n">y</span><span class="o">==</span><span class="mi">2004</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">m</span><span class="o">==</span><span class="mi">1</span><span class="p">))]</span>      <span class="p">,</span>
+    <span class="s2">&quot;sam&quot;</span> <span class="p">:</span> <span class="n">sam</span><span class="p">[((</span><span class="n">y</span><span class="o">==</span><span class="mi">2003</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">m</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">))</span><span class="o">+</span><span class="p">((</span><span class="n">y</span><span class="o">==</span><span class="mi">2004</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">m</span><span class="o">==</span><span class="mi">1</span><span class="p">))]</span>         <span class="p">,</span>
+<span class="p">},</span><span class="n">orient</span><span class="o">=</span><span class="s2">&quot;columns&quot;</span><span class="p">)</span>
+<span class="n">df_model_compobs</span><span class="p">[</span><span class="s2">&quot;d18O&quot;</span><span class="p">][</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">obs_prcp_d18O_df</span><span class="p">)]</span> <span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">df_model_compobs</span><span class="p">[</span><span class="s2">&quot;temp&quot;</span><span class="p">][</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">obs_temp_df</span><span class="p">)]</span> <span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">df_model_compobs</span><span class="p">[</span><span class="s2">&quot;prcp&quot;</span><span class="p">][</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">obs_prcp_df</span><span class="p">)]</span> <span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_obs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">({</span>
+    <span class="s2">&quot;Number&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">obs_prcp_d18O_df</span><span class="p">))),</span>
+    <span class="s2">&quot;Year&quot;</span><span class="p">:</span> <span class="n">obs_y_df</span><span class="p">,</span>
+    <span class="s2">&quot;Mon&quot;</span> <span class="p">:</span> <span class="n">obs_m_df</span><span class="p">,</span>
+    <span class="s2">&quot;Date&quot;</span><span class="p">:</span> <span class="n">obs_d_df</span><span class="p">,</span>
+    <span class="s2">&quot;d18O&quot;</span><span class="p">:</span> <span class="n">obs_prcp_d18O_df</span><span class="p">,</span>
+    <span class="s2">&quot;temp&quot;</span><span class="p">:</span> <span class="n">obs_temp_df</span><span class="p">,</span>
+    <span class="s2">&quot;prcp&quot;</span><span class="p">:</span> <span class="n">obs_prcp_df</span><span class="p">,</span>
+    <span class="s2">&quot;sam&quot;</span> <span class="p">:</span> <span class="n">sam_jra25</span><span class="p">[((</span><span class="n">y</span><span class="o">==</span><span class="mi">2003</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">m</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">))</span><span class="o">+</span><span class="p">((</span><span class="n">y</span><span class="o">==</span><span class="mi">2004</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">m</span><span class="o">==</span><span class="mi">1</span><span class="p">))]</span>         <span class="p">,</span>
+<span class="p">},</span><span class="n">orient</span><span class="o">=</span><span class="s2">&quot;columns&quot;</span><span class="p">)</span>
+<span class="n">df_obs</span><span class="p">[</span><span class="s2">&quot;d18O&quot;</span><span class="p">][</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">df_model_compobs</span><span class="p">[</span><span class="s2">&quot;d18O&quot;</span><span class="p">])]</span> <span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">df_obs</span><span class="p">[</span><span class="s2">&quot;temp&quot;</span><span class="p">][</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">df_model_compobs</span><span class="p">[</span><span class="s2">&quot;temp&quot;</span><span class="p">])]</span> <span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">df_obs</span><span class="p">[</span><span class="s2">&quot;prcp&quot;</span><span class="p">][</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">df_model_compobs</span><span class="p">[</span><span class="s2">&quot;prcp&quot;</span><span class="p">])]</span> <span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_obs</span>  <span class="o">=</span> <span class="n">df_obs</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s2">&quot;any&quot;</span><span class="p">)</span>
+<span class="n">df_model_compobs</span>  <span class="o">=</span> <span class="n">df_model_compobs</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s2">&quot;any&quot;</span><span class="p">)</span>
+<span class="n">num_obs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">mm</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">12</span><span class="p">):</span>
+    <span class="n">num_obs</span><span class="p">[</span><span class="n">mm</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_obs</span><span class="p">[</span><span class="n">df_obs</span><span class="p">[</span><span class="s2">&quot;Mon&quot;</span><span class="p">]</span><span class="o">==</span><span class="n">mm</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span> 
+<span class="n">num_compobs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">mm</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">12</span><span class="p">):</span>
+    <span class="n">num_compobs</span><span class="p">[</span><span class="n">mm</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_model_compobs</span><span class="p">[</span><span class="n">df_model_compobs</span><span class="p">[</span><span class="s2">&quot;Mon&quot;</span><span class="p">]</span><span class="o">==</span><span class="n">mm</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Table-S2">Table S2<a class="anchor-link" href="#Table-S2">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_spearmanr_obs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
@@ -14721,7 +14835,7 @@ div#notebook {
       <td>29</td>
       <td>31</td>
       <td>29</td>
-      <td>30</td>
+      <td>25</td>
       <td>26</td>
       <td>26</td>
     </tr>
@@ -14736,9 +14850,9 @@ div#notebook {
       <td>0.60</td>
       <td>0.57</td>
       <td>0.44</td>
-      <td>0.66</td>
+      <td>0.51</td>
       <td>0.82</td>
-      <td>NaN</td>
+      <td>0.37</td>
     </tr>
     <tr>
       <th>$p_\mathsf{{SAT}}$</th>
@@ -14751,7 +14865,7 @@ div#notebook {
       <td>5.29E-04</td>
       <td>8.83E-04</td>
       <td>1.72E-02</td>
-      <td>8.03E-05</td>
+      <td>9.83E-03</td>
       <td>2.92E-07</td>
       <td>6.26E-02</td>
     </tr>
@@ -14767,7 +14881,7 @@ div#notebook {
       <td>0.59</td>
       <td>0.46</td>
       <td>NaN</td>
-      <td>NaN</td>
+      <td>0.34</td>
       <td>NaN</td>
     </tr>
     <tr>
@@ -14781,14 +14895,14 @@ div#notebook {
       <td>7.17E-06</td>
       <td>5.10E-04</td>
       <td>1.26E-02</td>
-      <td>3.27E-01</td>
+      <td>1.30E-01</td>
       <td>9.02E-02</td>
       <td>3.44E-01</td>
     </tr>
     <tr>
       <th>$R_\mathsf{{SAM}}$</th>
       <td>NaN</td>
-      <td>NaN</td>
+      <td>0.39</td>
       <td>-0.57</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -14811,9 +14925,207 @@ div#notebook {
       <td>1.03E-01</td>
       <td>1.64E-01</td>
       <td>4.82E-03</td>
-      <td>2.04E-01</td>
+      <td>9.80E-01</td>
       <td>2.17E-03</td>
       <td>1.35E-01</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Table-S3">Table S3<a class="anchor-link" href="#Table-S3">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_spearmanr_model_compobs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="n">num_compobs</span><span class="p">)),</span>
+          <span class="p">[</span><span class="s1">&#39;</span><span class="si">{:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">(</span><span class="n">spearmanr</span><span class="p">(</span><span class="n">df_model_compobs</span><span class="p">[[</span><span class="s2">&quot;Mon&quot;</span><span class="p">,</span><span class="s2">&quot;d18O&quot;</span><span class="p">,</span><span class="s2">&quot;temp&quot;</span><span class="p">]],</span><span class="s2">&quot;temp&quot;</span><span class="p">,</span><span class="s2">&quot;d18O&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="s2">&quot;r&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="p">)],</span>
+          <span class="n">spearmanr</span><span class="p">(</span><span class="n">df_model_compobs</span><span class="p">[[</span><span class="s2">&quot;Mon&quot;</span><span class="p">,</span><span class="s2">&quot;d18O&quot;</span><span class="p">,</span><span class="s2">&quot;temp&quot;</span><span class="p">]],</span><span class="s2">&quot;temp&quot;</span><span class="p">,</span><span class="s2">&quot;d18O&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="s2">&quot;p&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+          <span class="p">[</span><span class="s1">&#39;</span><span class="si">{:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">(</span><span class="n">spearmanr</span><span class="p">(</span><span class="n">df_model_compobs</span><span class="p">[[</span><span class="s2">&quot;Mon&quot;</span><span class="p">,</span><span class="s2">&quot;d18O&quot;</span><span class="p">,</span><span class="s2">&quot;prcp&quot;</span><span class="p">]],</span><span class="s2">&quot;prcp&quot;</span><span class="p">,</span><span class="s2">&quot;d18O&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="s2">&quot;r&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="p">)],</span>
+          <span class="n">spearmanr</span><span class="p">(</span><span class="n">df_model_compobs</span><span class="p">[[</span><span class="s2">&quot;Mon&quot;</span><span class="p">,</span><span class="s2">&quot;d18O&quot;</span><span class="p">,</span><span class="s2">&quot;prcp&quot;</span><span class="p">]],</span><span class="s2">&quot;prcp&quot;</span><span class="p">,</span><span class="s2">&quot;d18O&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="s2">&quot;p&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+          <span class="p">[</span><span class="s1">&#39;</span><span class="si">{:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">(</span><span class="n">spearmanr</span><span class="p">(</span><span class="n">df_model_compobs</span><span class="p">[[</span><span class="s2">&quot;Mon&quot;</span><span class="p">,</span><span class="s2">&quot;d18O&quot;</span><span class="p">,</span><span class="s2">&quot;sam&quot;</span> <span class="p">]],</span><span class="s2">&quot;sam&quot;</span> <span class="p">,</span><span class="s2">&quot;d18O&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="s2">&quot;r&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="p">)],</span>
+          <span class="n">spearmanr</span><span class="p">(</span><span class="n">df_model_compobs</span><span class="p">[[</span><span class="s2">&quot;Mon&quot;</span><span class="p">,</span><span class="s2">&quot;d18O&quot;</span><span class="p">,</span><span class="s2">&quot;sam&quot;</span> <span class="p">]],</span><span class="s2">&quot;sam&quot;</span> <span class="p">,</span><span class="s2">&quot;d18O&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="s2">&quot;p&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+    <span class="p">],</span>
+    <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Number&quot;</span><span class="p">,</span><span class="s2">&quot;$R_\mathsf{{SAT}}$&quot;</span><span class="p">,</span><span class="s2">&quot;$p_\mathsf{{SAT}}$&quot;</span><span class="p">,</span> <span class="s2">&quot;$R_\mathsf{{P}}$&quot;</span><span class="p">,</span> <span class="s2">&quot;$p_\mathsf{{P}}$&quot;</span><span class="p">,</span> <span class="s2">&quot;$R_\mathsf{{SAM}}$&quot;</span><span class="p">,</span> <span class="s2">&quot;$p_\mathsf{{SAM}}$&quot;</span><span class="p">],</span>
+    <span class="n">columns</span><span class="o">=</span><span class="n">mons</span><span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">][:</span><span class="mi">12</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+
+<span class="n">df_spearmanr_model_compobs</span><span class="p">[</span><span class="s2">&quot;$R_\mathsf{{SAT}}$&quot;</span><span class="p">][</span><span class="n">df_spearmanr_model_compobs</span><span class="p">[</span><span class="s2">&quot;$p_\mathsf{{SAT}}$&quot;</span><span class="p">]</span><span class="o">&gt;</span><span class="n">p_value</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">df_spearmanr_model_compobs</span><span class="p">[</span><span class="s2">&quot;$R_\mathsf{{P}}$&quot;</span>  <span class="p">][</span><span class="n">df_spearmanr_model_compobs</span><span class="p">[</span><span class="s2">&quot;$p_\mathsf{{P}}$&quot;</span>  <span class="p">]</span><span class="o">&gt;</span><span class="n">p_value</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">df_spearmanr_model_compobs</span><span class="p">[</span><span class="s2">&quot;$R_\mathsf{{SAM}}$&quot;</span><span class="p">][</span><span class="n">df_spearmanr_model_compobs</span><span class="p">[</span><span class="s2">&quot;$p_\mathsf{{SAM}}$&quot;</span><span class="p">]</span><span class="o">&gt;</span><span class="n">p_value</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+<span class="n">df_spearmanr_model_compobs</span><span class="p">[</span><span class="s2">&quot;$p_\mathsf{{SAT}}$&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;</span><span class="si">{:.2E}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">(</span><span class="n">df_spearmanr_model_compobs</span><span class="p">[</span><span class="s2">&quot;$p_\mathsf{{SAT}}$&quot;</span><span class="p">])]</span>
+<span class="n">df_spearmanr_model_compobs</span><span class="p">[</span><span class="s2">&quot;$p_\mathsf{{P}}$&quot;</span>  <span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;</span><span class="si">{:.2E}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">(</span><span class="n">df_spearmanr_model_compobs</span><span class="p">[</span><span class="s2">&quot;$p_\mathsf{{P}}$&quot;</span>  <span class="p">])]</span>
+<span class="n">df_spearmanr_model_compobs</span><span class="p">[</span><span class="s2">&quot;$p_\mathsf{{SAM}}$&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;</span><span class="si">{:.2E}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">(</span><span class="n">df_spearmanr_model_compobs</span><span class="p">[</span><span class="s2">&quot;$p_\mathsf{{SAM}}$&quot;</span><span class="p">])]</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_spearmanr_model_compobs</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Jan</th>
+      <th>Feb</th>
+      <th>Mar</th>
+      <th>Apr</th>
+      <th>May</th>
+      <th>Jun</th>
+      <th>Jul</th>
+      <th>Aug</th>
+      <th>Sep</th>
+      <th>Oct</th>
+      <th>Nov</th>
+      <th>Dec</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Number</th>
+      <td>18</td>
+      <td>23</td>
+      <td>31</td>
+      <td>29</td>
+      <td>31</td>
+      <td>30</td>
+      <td>29</td>
+      <td>31</td>
+      <td>29</td>
+      <td>25</td>
+      <td>26</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <th>$R_\mathsf{{SAT}}$</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.63</td>
+      <td>0.50</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.36</td>
+      <td>0.57</td>
+      <td>0.36</td>
+      <td>0.38</td>
+      <td>0.37</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>$p_\mathsf{{SAT}}$</th>
+      <td>8.80E-01</td>
+      <td>9.96E-01</td>
+      <td>1.54E-04</td>
+      <td>5.97E-03</td>
+      <td>7.94E-01</td>
+      <td>1.04E-01</td>
+      <td>5.57E-02</td>
+      <td>8.21E-04</td>
+      <td>5.39E-02</td>
+      <td>5.82E-02</td>
+      <td>6.42E-02</td>
+      <td>5.96E-01</td>
+    </tr>
+    <tr>
+      <th>$R_\mathsf{{P}}$</th>
+      <td>-0.74</td>
+      <td>NaN</td>
+      <td>0.50</td>
+      <td>0.52</td>
+      <td>NaN</td>
+      <td>0.58</td>
+      <td>0.43</td>
+      <td>0.75</td>
+      <td>0.41</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-0.51</td>
+    </tr>
+    <tr>
+      <th>$p_\mathsf{{P}}$</th>
+      <td>4.47E-04</td>
+      <td>5.11E-01</td>
+      <td>4.08E-03</td>
+      <td>3.78E-03</td>
+      <td>6.43E-01</td>
+      <td>7.72E-04</td>
+      <td>1.99E-02</td>
+      <td>1.43E-06</td>
+      <td>2.70E-02</td>
+      <td>6.63E-01</td>
+      <td>1.40E-01</td>
+      <td>8.11E-03</td>
+    </tr>
+    <tr>
+      <th>$R_\mathsf{{SAM}}$</th>
+      <td>-0.44</td>
+      <td>0.47</td>
+      <td>-0.32</td>
+      <td>0.34</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-0.60</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>$p_\mathsf{{SAM}}$</th>
+      <td>6.44E-02</td>
+      <td>2.32E-02</td>
+      <td>8.07E-02</td>
+      <td>7.52E-02</td>
+      <td>5.98E-01</td>
+      <td>1.57E-01</td>
+      <td>6.12E-04</td>
+      <td>7.40E-01</td>
+      <td>2.63E-01</td>
+      <td>5.24E-01</td>
+      <td>2.71E-01</td>
+      <td>4.20E-01</td>
     </tr>
   </tbody>
 </table>
