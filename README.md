@@ -1,6 +1,6 @@
 # Scripts and Data summary
-
-Data (\*.npz and \*.nc) are available on https://doi.org/10.5281/zenodo.4733445
+- Source codes for analyses used in **Kino et al. (2021, JGR) https://doi.org/10.1029/2021JD035397**
+- Data (\*.npz and \*.nc) are available on https://doi.org/10.5281/zenodo.4733445
 
 ## Figure 1
 - [Figure 1](Ant_proxy_DF2003.png)
